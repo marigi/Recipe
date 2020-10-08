@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RecipeBox</title>
+    <title>Recipe App</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+
+  <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+  <span class="navbar-brand mb-0 h1">Recipe Box</span>
+  <nav class="my-2 my-md-0 mr-md-3 navbar-right">
+    <a class="p-2 text-dark" href="#"><%= link_to "New Recipe", new_recipe_path %></a>
+    <a class="p-2 text-dark" href="#"><%= link_to "Sign Out", root_path %></a>
+  </nav>
+  </nav>
+  <div class="container">
+    	<% flash.each do |type, msg| %>
+    		<%= content_tag :div, msg, class: "alert" %>
+    	<% end %>
+    	<%= yield %>
+    </div>
+ 
   </body>
 </html>
