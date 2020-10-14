@@ -19,12 +19,11 @@
     <a class="p-2 text-dark" href="#"><%= link_to "Sign Out", root_path %></a>
   </nav>
   </nav>
-  <div class="container">
+<div class="container">
     	<% flash.each do |type, msg| %>
-    		<%= content_tag :div, msg, class: "alert" %>
+    		<%= content_tag :div, msg, class: "alert alert-info" %>
     	<% end %>
     	<%= yield %>
-    </div>
- 
-  </body>
+</div>
+</body>
 </html>
