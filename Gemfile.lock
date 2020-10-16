@@ -73,6 +73,7 @@ GEM
       xpath (~> 3.2)
     childprocess (3.0.0)
     climate_control (0.2.0)
+    cocoon (1.2.15)
     concurrent-ruby (1.1.7)
     crass (1.0.6)
     erubi (1.9.0)
@@ -212,6 +213,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
+  cocoon (~> 1.2, >= 1.2.15)
   haml (~> 5.1, >= 5.1.2)
   jbuilder (~> 2.7)
   paperclip (~> 6.1)
