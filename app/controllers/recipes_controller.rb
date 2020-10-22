@@ -22,6 +22,11 @@ class RecipesController < ApplicationController
         end
     end
     def edit
+        if @recipe.save
+            redirect_to @recipe, notice: "Succcessfully edited the recipe"
+        else
+            render 'new'
+        end
     end
     def update
         if @recipe.update(recipe_params)
