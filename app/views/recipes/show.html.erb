@@ -10,7 +10,10 @@
         </h1>
         <p class="description">
           <%= @recipe.description %>
-        </p>        
+        </p>   
+        <p>
+         <br>Submitted by <%= @recipe.user.email %>
+        </p>     
       </div>
     </div>
 </div>
@@ -43,8 +46,10 @@
   <div class="row">
     <div class="col-md-12">
       <%= link_to "Back", root_path, class: "btn btn-outline-info" %>
+      <% if user_signed_in? %>     
       <%= link_to "Edit", edit_recipe_path, class: "btn btn-outline-success" %>
       <%= link_to "Delete", recipe_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-outline-danger" %>
+      <% end %>
     </div>
   </div>
 </div>
